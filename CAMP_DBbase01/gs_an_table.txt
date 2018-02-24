@@ -1,0 +1,38 @@
+// gs_an_table
+
+// insert
+
+INSERT INTO `gs_an_table`(`id`, `name`, `email`, `naiyou`, `indate`)
+VALUES (NULL,'kharukablog','kharuka@gs.com','blog',sysdate());
+
+// select
+
+SELECT * FROM `gs_an_table`;
+SELECT name FROM `gs_an_table`;
+SELECT name, email FROM `gs_an_table`;
+
+SELECT * FROM `gs_an_table` WHERE name ='gs2';
+
+SELECT * FROM `gs_an_table` WHERE id = 3;
+SELECT * FROM `gs_an_table` WHERE id >= 4;
+
+// or, and
+
+SELECT * FROM `gs_an_table` WHERE id = 2 or id = 5;
+SELECT * FROM `gs_an_table` WHERE id >= 3 and id <= 6;
+
+// like
+
+SELECT * FROM `gs_an_table` WHERE name like 'gs%';
+SELECT * FROM `gs_an_table` WHERE email like '%.com';
+SELECT * FROM `gs_an_table` WHERE indate like '%-01-%';
+
+// sort
+
+SELECT * FROM `gs_an_table` order by email desc;
+SELECT * FROM `gs_an_table` order by id desc;
+
+// limmit 開始位置（0から）,取得行数
+
+SELECT * FROM `gs_an_table` order by id desc limit 3;
+SELECT * FROM `gs_an_table` limit 3, 2;

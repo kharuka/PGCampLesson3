@@ -1,0 +1,38 @@
+// gs_ec_table
+
+// insert
+
+INSERT INTO `gs_ec_table`(`id`, `productName`, `value`, `productIntro`, `pictureName`, `datetime`)
+VALUES (NULL,'kharuka VA','1','VALU of kharuka', 'kharukaVA.jpg',sysdate());
+
+// select
+
+SELECT * FROM `gs_ec_table`;
+SELECT productName FROM `gs_ec_table`;
+SELECT productName, productIntro FROM `gs_ec_table`;
+
+SELECT * FROM `gs_ec_table` WHERE value = 600;
+
+SELECT * FROM `gs_ec_table` WHERE id = 3;
+SELECT * FROM `gs_ec_table` WHERE id >= 4;
+
+// or, and
+
+SELECT * FROM `gs_ec_table` WHERE id = 2 or id = 5;
+SELECT * FROM `gs_ec_table` WHERE id >= 3 and id <= 6;
+
+// like
+
+SELECT * FROM `gs_ec_table` WHERE productName like 'gs%';
+SELECT * FROM `gs_ec_table` WHERE productName like '%本';
+SELECT * FROM `gs_ec_table` WHERE datetime like '%-01-%';
+
+// sort
+
+SELECT * FROM `gs_ec_table` order by value asc;
+SELECT * FROM `gs_ec_table` order by id desc;
+
+// limmit 開始位置（0から）,取得行数
+
+SELECT * FROM `gs_ec_table` order by id desc limit 3;
+SELECT * FROM `gs_ec_table` limit 3, 2;
