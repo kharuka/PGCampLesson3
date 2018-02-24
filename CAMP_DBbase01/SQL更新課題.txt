@@ -1,0 +1,19 @@
+// 1.
+
+UPDATE `gs_ec_table` SET productName = 'RB' WHERE id = 7;
+
+// 2.
+
+UPDATE `gs_ec_table` SET productName = 'PY' WHERE id = 3 or id = 9;
+
+// 3.
+
+UPDATE `gs_ec_table` SET datetime = sysdate() WHERE id >= 6 and id <= 8;
+
+// 4.
+
+UPDATE `gs_ec_table` SET productName = 'PHP&JS' WHERE productName = 'JS本';
+
+// 5.
+
+UPDATE `gs_ec_table` SET productIntro = '未入力' WHERE productIntro is NULL;

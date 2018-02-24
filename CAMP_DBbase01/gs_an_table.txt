@@ -36,3 +36,11 @@ SELECT * FROM `gs_an_table` order by id desc;
 
 SELECT * FROM `gs_an_table` order by id desc limit 3;
 SELECT * FROM `gs_an_table` limit 3, 2;
+
+// update
+
+UPDATE `gs_an_table` SET `name`= 'やまざき' WHERE id = 2;
+
+// delete
+
+delete from gs_an_table WHERE id = 3;

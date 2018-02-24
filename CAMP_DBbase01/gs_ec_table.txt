@@ -36,3 +36,7 @@ SELECT * FROM `gs_ec_table` order by id desc;
 
 SELECT * FROM `gs_ec_table` order by id desc limit 3;
 SELECT * FROM `gs_ec_table` limit 3, 2;
+
+// update
+
+UPDATE `gs_ec_table` SET productName = 'RB' WHERE id = 7;
