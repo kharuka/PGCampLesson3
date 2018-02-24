@@ -1,0 +1,16 @@
+@chaarset "utf-8";
+
+.date1{
+  background-color: red;
+  color: white;
+}
+
+.date2{
+  background-color: white;
+  color: black;
+}
+
+.date3{
+  background-color: blue;
+  color: white;
+}
