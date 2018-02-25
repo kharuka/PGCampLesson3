@@ -1,0 +1,11 @@
+@chaarset "utf-8";
+
+.table-box{
+  display: flex;
+  justify-content: center;
+}
+
+.table-box table,tr,td{
+  border: solid 1px #bfbfbf;
+  border-collapse: collapse;
+}
