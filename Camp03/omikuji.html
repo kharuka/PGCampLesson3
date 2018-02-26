@@ -14,8 +14,6 @@
   <header id="header">
     <nav class="navi-box">
       <div class="header-logo"></div>
-      <div class="navi-about"><a href="#about">About</a></div>
-      <div class="navi-form"><a href="#divine">占う</a></div>
     </nav>
   </header>
 
