@@ -40,11 +40,7 @@
       echo h($name)."さん<br>";
       echo h($date)."生まれの今年のあなたの運勢は？<br>";
 
-      // rand seed reset
-      mt_srand();
-
-      // rand(min,max)
-      // $num=rand(1,5);
+      // random int (min,max)
       $num=mt_rand(1,10);
 
       // おみくじ結果
