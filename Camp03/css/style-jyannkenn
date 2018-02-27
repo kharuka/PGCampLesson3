@@ -1,0 +1,55 @@
+@chaarset "utf-8";
+
+/* body */
+body {
+  width: 1366px;
+}
+
+/* header */
+.navi-box{
+  width: 1350px;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-block{
+  width: 1366px;
+  height: 86px;
+  background-color: #28a745;
+}
+
+.header-logo{
+  width: 381px;
+  height: 80px;
+  margin-right: auto;
+  background-image: url(../img/header_logo.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+/* title */
+.title-box{
+  text-align: center;
+}
+
+/* form */
+.form-box{
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+}
+
+/* footer */
+#footer {
+  color: #fff;
+  background-color: #707070
+}
+
+.copyrights{
+  padding-top: 14px;
+  padding-bottom: 14px;
+  text-align: center;
+}
