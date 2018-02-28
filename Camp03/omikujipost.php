@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="author" content="Kuranami Haruka">
   <title>おみくじアプリ</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-omikuji.css">
 </head>
 <body>
 
@@ -60,7 +60,7 @@
           <p><input type="reset" name="reset" value="リセット" class="button"></p>
         </div>
       </div>
-      
+
     </form>
   </div>
 

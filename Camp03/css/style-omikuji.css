@@ -45,6 +45,11 @@ body {
   text-align: center;
 }
 
+/* about */
+.about-box{
+  text-align: center;
+}
+
 /* result */
 .result-box{
   text-align: center;
@@ -54,6 +59,67 @@ body {
   color: #5A7AB3;
   margin-top: 60px;
   margin-bottom: 30px;
+}
+
+/* form */
+.form-box{
+  background-color: #fafafa;
+}
+
+.form-box h2{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.table-box{
+  display: flex;
+  justify-content: center;
+}
+
+.table-box table{
+  border-collapse: separate;
+  border-spacing: 20px;
+}
+
+/* button */
+.button-box{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.button{
+  margin: 0 20px 40px;
+  padding: 1em 2em;
+  border: none;
+  display: inline-block;
+  background-color: #5A7AB3;
+  box-shadow: 0 6px #4063A4;
+  font-size: 114%;
+  line-height: 1;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+}
+
+.button{
+  border-radius: 2px;
+  box-shadow: 0 6px #4063A4;
+  top: 0;
+  transition: .2s all;
+}
+.button:hover {
+  border-radius: 2px;
+  box-shadow: 0 6px #4063A4;
+  top: 0;
+  transition: .2s all;
+  opacity: .8;
+}
+.button:active {
+    box-shadow: 0 1px #4063A4;
+    top: 5px;
 }
 
 /* footer */

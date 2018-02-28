@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="author" content="Kuranami Haruka">
   <title>ジャンケンアプリ</title>
-  <link href="css/style-jyannkenn" rel="stylesheet">
+  <link href="css/style-jyannkenn.css" rel="stylesheet">
   <!-- BootstrapのCSS読み込み -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- jQuery読み込み -->
@@ -34,9 +34,24 @@
   <div class="form-box">
     <div class="form-group">
       <form class="" action="jyannkenn2.php" method="post">
-        <p><input type="radio" name="radiobutton" value="グー" required>グー</p>
-        <p><input type="radio" name="radiobutton" value="チョキ" required>チョキ</p>
-        <p><input type="radio" name="radiobutton" value="パー" required>パー</p>
+        <div class="radio">
+          <label>
+            <input type="radio" class="custom-radio" name="radiobutton" value="グー" required>
+            グー
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" class="custom-radio" name="radiobutton" value="チョキ" required>
+            チョキ
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" class="custom-radio" name="radiobutton" value="パー" required>
+            パー
+          </label>
+        </div>
 
         <!-- button -->
         <p>ジャンケン<input type="submit" class="btn-success" value="ポン"></p>
