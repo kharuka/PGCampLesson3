@@ -21,11 +21,11 @@ if($status==false){
   // Selectデータの数だけ自動でループしてくれる
   while($result=$stmt->fetch(PDO::FETCH_ASSOC)){
     $view .= '<p>';
-    $view .= '<a href="bm_update_view.php?id='.$result["id"].'">';
+    $view .= '<a href="jyannkenn_update_view.php?id='.$result["id"].'">';
     $view .= $result["name"].",".$result["email"].",".$result["old"].",".$result["myhand"].",".$result["cphand"].",".$result["result"].",".$result["jdate"];
     $view .= '</a>';
     $view .= ' ';
-    $view .= '<a href="bm_delete.php?id='.$result["id"].'">';
+    $view .= '<a href="jyannkenn_delete.php?id='.$result["id"].'">';
     $view .= ' [削除] ';
     $view .= '</a>';
     $view .= '</p>';
