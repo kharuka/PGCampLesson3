@@ -52,7 +52,7 @@ if($status==false){
     <nav class="navi-box">
       <div class="header-logo">ジャンケン</div>
       <div class="home-view"><a href="jyannkenn_view.php">Home</a></div>
-      <div class="result-view"><a href="jyannkenn_list_view.php">結果一覧</a></div>
+      <div class="result-view"><a href="login.php">結果一覧</a></div>
     </nav>
   </header>
 
