@@ -1,17 +1,22 @@
 <?php
 
+// 関数呼び出し
+include("function/funcs.php");
+
+// セッションチェック
+session_start();
+$ssid="chk_ssid";
+sessionCheck($ssid);
+
 // POSTでid,name,email,oldを取得
-$id=$_POST["id"];
-$name=$_POST["name"];
-$email=$_POST["email"];
-$old=$_POST["old"];
+$id=h($_POST["id"]);
+$name=h($_POST["name"]);
+$email=h($_POST["email"]);
+$old=h($_POST["old"]);
 
 // DB接続します（エラー処理追加）
-try{
-  $pdo=new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','');
-}catch(PDOException $e){
-  exit('DbConnectError:'.$e->getMessage());
-}
+$dbname='gs_db';
+$pdo=dbConnect($dbname);
 
 // データ更新SQL作成
 $sql="UPDATE gs_j_table SET name=:name,email=:email,old=:old WHERE id=:id";

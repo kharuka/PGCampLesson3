@@ -1,14 +1,19 @@
 <?php
 
+// 関数呼び出し
+include("function/funcs.php");
+
+// セッションチェック
+session_start();
+$ssid="chk_ssid";
+sessionCheck($ssid);
+
 // 更新するレコードのidをGET
-$id=$_GET["id"];
+$id=h($_GET["id"]);
 
 // DB接続します（エラー処理追加）
-try{
-  $pdo=new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','');
-}catch(PDOException $e){
-  exit('DbConnectError:'.$e->getMessage());
-}
+$dbname='gs_db';
+$pdo=dbConnect($dbname);
 
 // データ取得SQL作成
 $sql="SELECT * FROM gs_j_table WHERE id=:id";
@@ -51,8 +56,8 @@ if($status==false){
     <header class="header" id="header">
       <nav class="navi-box">
         <div class="header-logo">ジャンケン</div>
-        <div class="home-view"><a href="jyannkenn_view.php">Home</a></div>
         <div class="result-view"><a href="jyannkenn_list_view.php">結果一覧</a></div>
+              <div class="result-view"><a href="logout.php">ログアウト</a></div>
       </nav>
     </header>
 

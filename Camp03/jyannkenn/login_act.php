@@ -3,7 +3,6 @@
 // 関数呼び出し
 include("function/funcs.php");
 
-// セッション開始
 session_start();
 
 // POSTでliginId,passwordを取得
@@ -11,11 +10,8 @@ $loginId=h($_POST["loginId"]);
 $password=h($_POST["password"]);
 
 // DB接続します（エラー処理追加）
-try{
-  $pdo=new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','');
-}catch(PDOException $e){
-  exit('DbConnectError:'.$e->getMessage());
-}
+$dbname='gs_db';
+$pdo=dbConnect($dbname);
 
 // データ更新SQL作成
 $sql="SELECT * FROM gs_user_table WHERE u_id=:loginId AND u_pw=:password";

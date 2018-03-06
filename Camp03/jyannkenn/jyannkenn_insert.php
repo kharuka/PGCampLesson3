@@ -1,5 +1,8 @@
 <?php
 
+// 関数呼び出し
+include("function/funcs.php");
+
 // 入力チェック（受信確認処理追加）
 if(
   !isset($_POST["name"]) || $_POST["name"]=="" ||
@@ -19,10 +22,10 @@ if(
 // }
 
 // POSTデータ取得
-$name=$_POST["name"];
-$email=$_POST["email"];
-$old=$_POST["old"];
-$myhand=$_POST["radiobutton"];
+$name=h($_POST["name"]);
+$email=h($_POST["email"]);
+$old=h($_POST["old"]);
+$myhand=h($_POST["radiobutton"]);
 
 // rand(min,max)
 $num=mt_rand(1,3);
@@ -60,11 +63,8 @@ if($myhand==$cphand){
 }
 
 // DB接続します（エラー処理追加）
-try{
-  $pdo=new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','');
-}catch(PDOException $e){
-  exit('DbConnectError:'.$e->getMessage());
-}
+$dbname='gs_db';
+$pdo=dbConnect($dbname);
 
 // データ登録SQL作成
 $sql="INSERT INTO gs_j_table(id,name,email,old,myhand,cphand,result,jdate)

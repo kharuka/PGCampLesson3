@@ -1,11 +1,11 @@
 <?php
 
+// 関数呼び出し
+include("function/funcs.php");
+
 // DB接続します（エラー処理追加）
-try{
-  $pdo=new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','');
-}catch(PDOException $e){
-  exit('DbConnectError:'.$e->getMessage());
-}
+$dbname='gs_db';
+$pdo=dbConnect($dbname);
 
 // データ表示SQL作成
 $id_max=intval($pdo->query("SELECT max(id) FROM gs_j_table")->fetchColumn());
