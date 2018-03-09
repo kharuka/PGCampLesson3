@@ -16,7 +16,9 @@ h2{
 }
 
 .navi-box{
-  width: 1350px;
+  width: 1366px;
+  height: 72px;
+  background-color: #28a745;
   position: fixed;
   display: flex;
   justify-content: flex-end;
