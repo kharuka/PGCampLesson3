@@ -12,28 +12,32 @@ sessionCheck($ssid);
 $dbname='gs_db';
 $pdo=dbConnect($dbname);
 
+// QueryのBufferを使用
+$pdo->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY,true);
+
 // データ表示SQL作成
 $sql="SELECT * FROM gs_j_table";
 $stmt=$pdo->prepare($sql);
 $status = $stmt->execute();
 
 // データ表示
-$view="<p>名前,Email,年齢,あなたの手,CPの手,結果,DateTime</p>";
+$view="";
 if($status==false){
   $error=$stmt->errorInfo();
   exit("ErrorQuery:".$error[2]);
 }else{
   // Selectデータの数だけ自動でループしてくれる
   while($result=$stmt->fetch(PDO::FETCH_ASSOC)){
-    $view .= '<p>';
-    $view .= '<a href="jyannkenn_update_view.php?id='.$result["id"].'">';
-    $view .= $result["name"].",".$result["email"].",".$result["old"].",".$result["myhand"].",".$result["cphand"].",".$result["result"].",".$result["jdate"];
-    $view .= '</a>';
-    $view .= ' ';
-    $view .= '<a href="jyannkenn_delete.php?id='.$result["id"].'">';
-    $view .= ' [削除] ';
-    $view .= '</a>';
-    $view .= '</p>';
+    $view.='<tr>';
+    $view.='<td><p><a href="jyannkenn_update_view.php?id='.$result["id"].'">'.$result["name"].'</a></p></td>';
+    $view.='<td><p><a href="jyannkenn_update_view.php?id='.$result["id"].'">'.$result["email"].'</a></p></td>';
+    $view.='<td><p><a href="jyannkenn_update_view.php?id='.$result["id"].'">'.$result["old"].'</a></p></td>';
+    $view.='<td><p><a href="jyannkenn_update_view.php?id='.$result["id"].'">'.$result["myhand"].'</a></p></td>';
+    $view.='<td><p><a href="jyannkenn_update_view.php?id='.$result["id"].'">'.$result["cphand"].'</a></p></td>';
+    $view.='<td><p><a href="jyannkenn_update_view.php?id='.$result["id"].'">'.$result["result"].'</a></p></td>';
+    $view.='<td><p><a href="jyannkenn_update_view.php?id='.$result["id"].'">'.$result["jdate"].'</a></p></td>';
+    $view.='<td><p><a href="jyannkenn_delete.php?id='.$result["id"].'">[削除]</a></p></td>';
+    $view.='</tr>';
   }
 }
 
@@ -76,8 +80,26 @@ if($status==false){
   <!-- select -->
   <h2>データ表示</h2>
   <div class="view-box">
-    <div class="view-subbox">
-      <?=$view?>
+    <div class="container">
+      <table class="table table-striped">
+        <!-- <caption></caption> -->
+        <thead>
+          <tr>
+            <th>名前</th>
+            <th>Email</th>
+            <th>年齢</th>
+            <th>あなたの手</th>
+            <th>CPの手</th>
+            <th>結果</th>
+            <th>Date Time</th>
+            <th>削除</th>
+          </tr>
+        </thead>
+        <!-- <tfoot></tfoot> -->
+        <tbody>
+          <?=$view?>
+        </tbody>
+      </table>
     </div>
   </div>
 
